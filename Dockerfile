@@ -1,6 +1,7 @@
 FROM pdubois/docker-alfresco
 MAINTAINER Cyrille Puget
 
-RUN chown -R 1001:1001 /opt/alfresco
+RUN chgrp -R 0 /some/directory \
+  && chmod -R g+rwX /some/directory
 
 USER 1001
